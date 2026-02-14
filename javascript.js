@@ -188,24 +188,34 @@ document.getElementById("btnMusica").addEventListener("click", () => {
 function mostrarTextosFinales(){
 
     const textos = [
-        "Te quiero negra.",
-        "Eres una increíble persona.",
+        "Te quiero negra❤.",
+        "Eres una increíble persona✨✨.",
         "Gracias por ser lo que eres.",
-        "Y por ser como eres",
-        "Te admiro mucho por tus ideales",
-        "Por tus morales",
-        "Por tu mentalidad de siempre hacer algo productivo",
-        "Desde que te conoci, mis dias tienen algo más bonito",
-        "Tienes una forma de ser que se queda en la mente y el corazón",
+        "Y por ser como eres😊",
+        "Te admiro mucho por tus ideales😎",
+        "Por tus morales✔",
+        "Por tu mentalidad de siempre hacer algo productivo😉",
+        "Desde que te conoci...", 
+        "Mis dias tienen algo más bonito",
+        "Tienes una forma de ser", 
+        "Que se queda en la mente y el corazón",
         "Me encanta la paz que transmite hablar contigo",
         "Tu simple presencia causa un efecto que no sabes que causa",
         "Contigo, las conversaciones simples se sienten especiales",
-        "Eres una mezcla de loca trastornada con flojera y fortaleza",
-        "Esta pagina no es un simple código, es cariño convertido en detalles",
-        "No, en serio, apreciala que no sabes el sufrimiento que pase haciendo esto para que funcione",
-        "Te dedico esta paginita para ti.",
-        "No es mucho, pero lo hice con mucho esfuerzo.",
-        "Feliz San Valentin",
+        "Eres una mezcla de", 
+        "Loca trastornada con flojera y fortaleza",
+        "Esta página no es un simple código", 
+        "Es cariño convertido en detalles",
+        "No, en serio, fue una tortura🤦‍♂️😩", 
+        "No sabes el sufrimiento que pasé haciendo esto🤕", 
+        "Para que la página funcione",
+        "Pero al final si se pudo😎🤞✨"
+        "Te dedico esta paginita para ti💖",
+        "No es mucho..."
+        "Está sencillita😓"
+        "Pero lo hice con mucho esfuerzo y cariño🥰",
+        "Feliz San Valentin Mi negra🌹🎉💖",
+        "Pasala bien, te mando un abrazo fuerte desde la distancia",
     ];
 
     let i = 0;
@@ -228,4 +238,5 @@ function mostrarTextosFinales(){
         }, 100);
 
     }, 3500);
+
 }
