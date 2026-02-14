@@ -200,7 +200,8 @@ function mostrarTextosFinales(){
         "Tienes una forma de ser", 
         "Que se queda en la mente y el corazón",
         "Me encanta la paz que transmite hablar contigo",
-        "Tu simple presencia causa un efecto que no sabes que causa",
+        "Tu simple presencia...", 
+        "Causa un efecto que no sabes que causa",
         "Contigo, las conversaciones simples se sienten especiales",
         "Eres una mezcla de", 
         "Loca trastornada con flojera y fortaleza",
@@ -240,4 +241,5 @@ function mostrarTextosFinales(){
     }, 3500);
 
 }
+
 
