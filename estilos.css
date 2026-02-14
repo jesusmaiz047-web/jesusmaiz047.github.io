@@ -1,0 +1,383 @@
+/* ===== FONDO CIELO NOCTURNO ===== */
+body{
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0a0441, #122e4e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ===== CONTENEDOR DEL CORAZÓN (AQUÍ VA EL BRILLO) ===== */
+#corazonInicial{
+    animation: brillo-cambiante 2s ease-in-out infinite;}
+
+@keyframes brillo-cambiante {
+     45%{
+        filter: drop-shadow(0 0 15px #00f0ff)
+                drop-shadow(0 0 25px #00f0ff)
+                drop-shadow(0 0 40px #00f0ff);
+        }
+       
+        60%{
+            filter:
+                drop-shadow(0 0 20px violet)
+                drop-shadow(0 0 35px violet)
+                drop-shadow(0 0 55px violet);
+        }           
+}
+
+/* ===== CORAZÓN PRINCIPAL ===== */
+.corazon{
+    width: 120px;
+    height: 120px;
+    background: red;
+    position: relative;
+    transform: rotate(45deg);
+    animation: palpitar 1s infinite;
+    cursor: pointer;
+}
+
+.corazon::before,
+.corazon::after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: red;
+    border-radius: 50%;
+}
+
+.corazon::before{
+    top: -60px;
+    left: 0;
+}
+
+.corazon::after{
+    left: -60px;
+    top: 0;
+}
+
+
+/* ===== ANIMACIÓN DE PALPITAR ===== */
+@keyframes palpitar{
+    0%{ transform: rotate(45deg) scale(1); }
+    50%{ transform: rotate(45deg) scale(1.1); }
+    100%{ transform: rotate(45deg) scale(1); }
+}
+
+
+/* ===== ANIMACIÓN DE ENCOGER (AL HACER CLICK) ===== */
+.encoger{
+    animation: encoger 0.15s forwards;
+}
+
+@keyframes encoger{
+    to{ transform: rotate(45deg) scale(0.6); }
+}
+
+
+/* ===== MINI CORAZONES QUE EXPLOTAN ===== */
+.explode-corazon{
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: red;
+    transform: rotate(45deg);
+    animation: explotar 1.8s ease-out forwards;
+}
+
+.explode-corazon::before,
+.explode-corazon::after{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+}
+
+.explode-corazon::before{
+    top: -6px;
+    left: 0;
+}
+
+.explode-corazon::after{
+    left: -6px;
+    top: 0;
+}
+
+@keyframes explotar{
+    to{
+        transform: translate(var(--x), var(--y)) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/*Nombre penélope*/
+#nombre{
+    position: fixed;
+    top: 40%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    text-shadow: 0 0 10px #fd8c0a;
+    z-index: 2;
+}
+
+/*Animacion de aparicion del nombre*/
+@keyframes mostrarNombre{
+    0%{opacity: 0; transform: translate(-50% -60%) scale(0.8);}
+    50%{opacity: 1; transform: translate(-50% -50%) scale(1.1);}
+    100%{opacity: 1; transform: translate(-50% -60%) scale(1);}
+}
+
+/*contenedor de estrellas*/
+#fondoEstrellas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/*Estrellas individual*/
+.estrella{
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: subirEstrella 1.5s ease-out forwards;
+}
+
+/*Animacion de subida*/
+@keyframes subirEstrellas{
+    0%{ 
+        transform: translateY(100vh); 
+        opacity: 0;
+    }
+    100%{ 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes mostrarNombre{
+    0% { opacity: 0; transform: scale(0.5);}
+    50% { opacity: 1; transform: scale(1.1);}
+    100% { opacity: 1; transform: scale(1);}
+}
+
+/*MINI CORAZONES*/
+
+.mini-corazon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: red;
+    transform: rotate(45deg);
+    animation: explotarMini 1.2s ease-out forwards;
+}
+
+/* Forma del corazón */
+.mini-corazon::before,
+.mini-corazon::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 50%;
+}
+
+.mini-corazon::before {
+    top: -7px;
+    left: 0;
+}
+
+.mini-corazon::after {
+    left: -7px;
+    top: 0;
+}
+
+/* Animación de explosión */
+@keyframes explotarMini {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(45deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) rotate(45deg) scale(0.5);
+    }
+}
+
+/* ===== CIELO CON ESTRELLAS ===== */
+
+.mostrar-estrellas::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    background-position: 0 0, 50px 50px, 100px 100px;
+    opacity: 0;
+    animation: aparecerEstrellas 2s ease forwards;
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.mostrar-estrellas::before{
+    opacity: 1;
+}
+
+@keyframes aparecerEstrellas{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lluvia-corazones{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.corazon-lluvia{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    clip-path: polygon(50% 0%, 61% 11%, 75% 11%, 84% 22%, 84%
+     35%, 75% 46%, 50% 62%, 25% 46%, 16% 35%, 16% 22%, 25% 11%, 39% 11%);
+    animation: caer 5s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes caer{
+    0%{
+        transform: translateY(-50px) translateX(0);
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(110vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+#mensaje-navegacion button{
+    padding: 8px 16px;
+    font-size: 1rem;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6b81;
+    color: white;
+}
+
+#mensaje-navegacion button:hover{
+    background-color: #ff4c61;
+}
+
+#mensaje{
+    font-size: 1.5rem;
+    color: white;
+    display: inline-block;
+    min-width: 250px;
+}
+
+/* Contenedor del ramo */
+#ramo{
+    position: fixed;
+    bottom: -300px; /* empieza fuera de la pantalla */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+    animation: subirRamo 2s forwards;
+}
+
+/* Flor amarilla */
+.flor{
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,255,0,0.8);
+    animation: brisa 3s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+/* Animación que sube el ramo */
+@keyframes subirRamo{
+    from { bottom: -300px; opacity: 0; }
+    to { bottom: 50%; opacity: 1; }
+}
+
+/* Movimiento suave de brisa */
+@keyframes brisa{
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(2deg); }
+    100% { transform: translateY(0) rotate(-2deg); }
+}
+
+/* Broma */
+#broma{
+    animation: desaparecer 1.5s forwards;
+}
+
+@keyframes desaparecer{
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#btnMusica{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    background: #ffffffcc;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+#btnMusica:hover{
+    transform: translateX(-50%) scale(1.1);
+}
