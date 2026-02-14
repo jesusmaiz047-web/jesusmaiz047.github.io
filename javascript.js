@@ -189,8 +189,8 @@ function mostrarTextosFinales(){
 
     const textos = [
         "Te quiero negra❤.",
-        "Eres una increíble persona✨✨.",
-        "Gracias por ser lo que eres.",
+        "Eres una increíble persona✨✨",
+        "Gracias por ser lo que eres",
         "Y por ser como eres😊",
         "Te admiro mucho por tus ideales😎",
         "Por tus morales✔",
@@ -209,10 +209,10 @@ function mostrarTextosFinales(){
         "No, en serio, fue una tortura🤦‍♂️😩", 
         "No sabes el sufrimiento que pasé haciendo esto🤕", 
         "Para que la página funcione",
-        "Pero al final si se pudo😎🤞✨"
+        "Pero al final si se pudo😎🤞✨",
         "Te dedico esta paginita para ti💖",
-        "No es mucho..."
-        "Está sencillita😓"
+        "No es mucho...",
+        "Está sencillita😓",
         "Pero lo hice con mucho esfuerzo y cariño🥰",
         "Feliz San Valentin Mi negra🌹🎉💖",
         "Pasala bien, te mando un abrazo fuerte desde la distancia",
@@ -240,3 +240,4 @@ function mostrarTextosFinales(){
     }, 3500);
 
 }
+
